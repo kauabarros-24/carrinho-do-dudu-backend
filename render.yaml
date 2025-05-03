@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: carrinho-do-dudu-backend
+    env: python
+    buildCommand: ./build.sh
+    startCommand: gunicorn -k uvicorn.workers.UvicornWorker src.carrinho_do_dudu_backend.main:app --bind 0.0.0.0:8000 --workers 4
+    plan: free
